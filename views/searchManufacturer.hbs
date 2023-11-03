@@ -1,0 +1,56 @@
+<div class="container">
+    <h1 class="allData-title">{{ title }}</h1>
+    <form id="searchForm" action="/search/Manufacturer" method="post">
+        <input type="text" id="Manufacturer" name="Manufacturer" placeholder="Enter Manufacturer">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display search results here -->
+    {{#if result}}
+        <table class="search-table" border="1">
+            <thead>
+                <tr class="allData-thead-tr">
+                    <th>Invoice Number</th>
+                    <th>Manufacturer</th>
+                    <th>Image</th>
+                    <th>Class</th>
+                    <th>Sales in Thousands</th>
+                    <th>Year Resale Value</th>
+                    <th>Price in Thousands</th>
+                    <th>Engine Size</th>
+                    <th>Horsepower</th>
+                    <th>Wheelbase</th>
+                    <th>Width</th>
+                    <th>Length</th>
+                    <th>Curb Weight</th>
+                    <th>Fuel Capacity</th>
+                    <th>Fuel Efficiency</th>
+                    <th>Latest Launch</th>
+                    <th>Power Performance Factor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="allData-tbody-tr">
+                    <td>{{ result.InvoiceNo }}</td>
+                    <td>{{ result.Manufacturer }}</td>
+                    <td><img src="{{ result.image }}" alt="Car Image" width="100"></td>
+                    <td>{{ result.class }}</td>
+                    <td>{{ result.Sales_in_thousands }}</td>
+                    <td>{{ result.__year_resale_value }}</td>
+                    <td>{{ result.Price_in_thousands }}</td>
+                    <td>{{ result.Engine_size }}</td>
+                    <td>{{ result.Horsepower }}</td>
+                    <td>{{ result.Wheelbase }}</td>
+                    <td>{{ result.Width }}</td>
+                    <td>{{ result.Length }}</td>
+                    <td>{{ result.Curb_weight }}</td>
+                    <td>{{ result.Fuel_capacity }}</td>
+                    <td>{{ result.Fuel_efficiency }}</td>
+                    <td>{{ result.Latest_Launch }}</td>
+                    <td>{{ result.Power_perf_factor }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    {{/if}}
+</div>
